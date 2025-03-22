@@ -17,8 +17,11 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install Dependencies 📦
-        run: npm ci
+      # Install dependencies with explicit cleaning of node_modules
+      - name: Clean and Install 📦
+        run: |
+          rm -rf node_modules
+          npm install
 
       - name: Build 🔧
         run: npm run build
