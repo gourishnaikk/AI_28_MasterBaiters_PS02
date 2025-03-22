@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found - IDMS Infotech</title>
+  <script>
+    // Redirect to the main app which will handle routing
+    const segmentCount = 1;
+    const repoName = 'AI_28_MasterBaiters_PS02';
+    
+    const l = window.location;
+    const redirectURL = `${l.protocol}//${l.hostname}${
+      l.port ? ':' + l.port : ''
+    }/${repoName}/#${l.pathname.split('/').slice(segmentCount).join('/')}`;
+    
+    window.location.replace(redirectURL);
+  </script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    .container {
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      color: #666;
+    }
+    .redirect-message {
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Page Not Found</h1>
+    <p>The page you're looking for doesn't exist or has been moved.</p>
+    <p class="redirect-message">Redirecting you to the homepage...</p>
+  </div>
+</body>
+</html> 

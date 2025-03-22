@@ -211,7 +211,16 @@ var vite_config_default = defineConfig({
       await import("@replit/vite-plugin-cartographer").then(
         (m) => m.cartographer()
       )
-    ] : []
+    ] : [],
+    {
+      name: "html-transform",
+      transformIndexHtml(html) {
+        return html.replace(
+          /%BASE_URL%/g,
+          process.env.NODE_ENV === "production" ? `/${repoName}/` : "/"
+        );
+      }
+    }
   ],
   resolve: {
     alias: {
