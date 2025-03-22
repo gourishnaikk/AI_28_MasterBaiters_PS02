@@ -27,6 +27,15 @@ export default defineConfig({
           ),
         ]
       : []),
+    {
+      name: 'html-transform',
+      transformIndexHtml(html) {
+        return html.replace(
+          /%BASE_URL%/g, 
+          process.env.NODE_ENV === 'production' ? `/${repoName}/` : '/'
+        );
+      }
+    }
   ],
   resolve: {
     alias: {
